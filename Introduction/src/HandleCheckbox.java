@@ -1,6 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 public class HandleCheckbox {
@@ -15,9 +16,27 @@ public class HandleCheckbox {
 				//driver.manage().window().maximize();
 				
 				
-				//driver.get("https://www.spicejet.com/");
+				driver.get("https://www.spicejet.com/");
 				
 				Thread.sleep(5000);
+				
+				
+				driver.findElement(By.id("divpaxinfo")).click();
+				//Select Passenger dropdown
+				Select s1 = new Select(driver.findElement(By.id("ctl00_mainContent_ddl_Adult")));
+				s1.selectByValue("5");
+				
+				//Select currency dropdown
+				Select s2 = new Select(driver.findElement(By.id("ctl00_mainContent_DropDownListCurrency")));
+				s2.selectByValue("USD");
+				
+				//click on search
+				driver.findElement(By.cssSelector("#ctl00_mainContent_btn_FindFlights")).click();
+				
+				
+				
+				
+				
 				//automate
 				/*
 				System.out.println(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected()); //validate selected or not
@@ -69,7 +88,7 @@ public class HandleCheckbox {
 				
 				
 				Thread.sleep(2000);
-				*/
+				
 				
 				driver.get("https://rahulshettyacademy.com/AutomationPractice/");
 				//select and validate checkbox
@@ -82,7 +101,7 @@ public class HandleCheckbox {
 				
 				//count number of checkboxes
 				System.out.println(driver.findElements(By.cssSelector("input[type='checkbox']")).size());
-		
+				 */
 		
 	}
 }
