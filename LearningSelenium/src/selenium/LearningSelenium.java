@@ -25,7 +25,7 @@ public static void main(String[] args) throws InterruptedException {
 		
 	//run the test
 	driver.findElement(By.xpath("//div[@data-selenium='autocomplete-box']")).click();
-	Thread.sleep(2000);
+ 	Thread.sleep(2000);
 	driver.findElement(By.xpath("//input[@data-selenium='textInput']")).sendKeys("ho chi"); //input keyword
 	
 	
