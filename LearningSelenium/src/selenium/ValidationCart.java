@@ -12,7 +12,7 @@ public class ValidationCart {
 	public static void main(String[] args) throws InterruptedException {
 		// set property
 		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\trant\\Downloads\\chromedriver_win32\\chromedriver.exe");
+				"C:\\\\Selenium\\\\chromedriver_win32\\\\chromedriver.exe");
 
 		WebDriver driver = new ChromeDriver();
 
@@ -26,7 +26,7 @@ public class ValidationCart {
 		List<WebElement> products = driver.findElements(By.cssSelector("h4[class='product-name']"));
 
 		// set array
-		String[] itemList = { "Cucumber", "Brocolli", "Beans" };
+		String[] itemList = { "Cucumber", "Brocolli", "Beans", "Carrot" };
 
 
 		// select item
@@ -43,9 +43,9 @@ public class ValidationCart {
 			if (formattedItemList.contains(formattedName)) {
 
 				j++;
-				driver.findElements(By.xpath("//button[text()='ADD TO CART']")).get(i).click();
+				driver.findElements(By.xpath("//div[@class='product-action']/button")).get(i).click();
 
-				if (j==3) {
+				if (j==itemList.length) {
 					break;
 				}
 			}
