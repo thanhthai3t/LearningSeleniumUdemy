@@ -8,6 +8,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SyncWait {
 
@@ -15,36 +17,45 @@ public class SyncWait {
 		// set property
 		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver_win32\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
-		//set implicit wait
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-
+		//set implicit wait 
+		//driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		
+		//explicit wait
+		WebDriverWait w = new WebDriverWait(driver,5);
+		
+		
 		// set array
 		String[] itemList = { "Cucumber", "Brocolli", "Beans", "Carrot" };
 
 		// launch webpage
 		driver.manage().window().maximize();
 		driver.get("https://rahulshettyacademy.com/seleniumPractise");
-
+		w.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector("div.product-action")));
+		
 		// call method to select item into cart
 		selectCart(driver, itemList);
 		
 		//checkout cart
 		driver.findElement(By.cssSelector("a.cart-icon")).click();
 		driver.findElement(By.xpath("//div[@class='action-block']/button")).click();
+		w.until(ExpectedConditions.visibilityOfElementLocated((By.cssSelector("button.promoBtn")))); //wait for apply button appearing
 		
 		//input invalid promote code
 		driver.findElement(By.cssSelector("input.promoCode")).sendKeys("test");
 		driver.findElement(By.cssSelector("button.promoBtn")).click(); //apply the promote code
+		w.until(ExpectedConditions.visibilityOfElementLocated((By.cssSelector("span.promoInfo")))); //wait
 		
 		//printout error message
 		System.out.println(driver.findElement(By.cssSelector("span.promoInfo")).getText());
 		
 		
 		//input valid promote code
-		driver.findElement(By.cssSelector("input.promoCode")).clear();
+		driver.navigate().refresh();
+		w.until(ExpectedConditions.visibilityOfElementLocated((By.cssSelector("button.promoBtn")))); //wait for apply button appearing
+		
 		driver.findElement(By.cssSelector("input.promoCode")).sendKeys("rahulshettyacademy");
 		driver.findElement(By.cssSelector("button.promoBtn")).click(); //apply the promote code
-		Thread.sleep(5000);
+		w.until(ExpectedConditions.visibilityOfElementLocated((By.cssSelector("span.promoInfo")))); //wait for message	
 		//printout error message
 		System.out.println(driver.findElement(By.cssSelector("span.promoInfo")).getText());
 		
