@@ -1,4 +1,4 @@
-package selenium;
+package section10_Synchronization;
 
 import java.util.Arrays;
 import java.util.List;

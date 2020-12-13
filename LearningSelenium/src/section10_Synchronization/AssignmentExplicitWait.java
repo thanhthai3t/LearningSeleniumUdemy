@@ -1,4 +1,4 @@
-package selenium;
+package section10_Synchronization;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
