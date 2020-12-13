@@ -1,39 +1,34 @@
-package selenium;
+package section08_TechniqueWebElement;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
-public class ValidateDisableEnable {
+public class ValidateElementStatus {
 
 	public static void main(String[] args) throws InterruptedException {
-		// TODO Auto-generated method stub
+		//object: learning how to validate disabled / enabled status in an element
 
-		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\trant\\Downloads\\chromedriver_win32\\chromedriver.exe");
-
+		//set property
+		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 
-		// learning how to validate disabled / enabled status
-
+		//open URL in browser
 		driver.manage().window().maximize();
 		driver.get("https://www.spicejet.com/");
 		Thread.sleep(5000);
+				
+		driver.findElement(By.id("Div1")).click(); 	//click on date picker
 		
-		//not click on date picker
-		//System.out.println(driver.findElement(By.id("Div1")).getAttribute("style"));
-		
-		//click on date picker
-		driver.findElement(By.id("Div1")).click();
-
+		//check if date picker is able to click
 		if (driver.findElement(By.id("Div1")).getAttribute("style").contains("0.5")) {
-
 			System.out.println("Validate completed: Disabled");
 			Assert.assertTrue(true);
 
-		} /*else if (driver.findElement(By.id("Div1")).getAttribute("style").contains("1")) {
-			
+		} 
+		
+		/*else if (driver.findElement(By.id("Div1")).getAttribute("style").contains("1")) {			
 			System.out.println("Validate completed: Enabled");
 			Assert.assertFalse(false);
 		}*/
