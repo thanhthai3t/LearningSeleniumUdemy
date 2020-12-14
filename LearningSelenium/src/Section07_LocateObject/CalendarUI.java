@@ -6,18 +6,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class CalendarUI {
 	public static void main(String[] args) throws InterruptedException {
 		//set property
-		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver_win32\\chromedriver.exe");
-		
-		//create driver object
+		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		
 		//practice with spicejet handle calendar UI	
 		driver.manage().window().maximize();
-		driver.get("https://www.spicejet.com/");
-		
 		Thread.sleep(5000);
 		
-		//automate
+		driver.get("https://www.spicejet.com/");
 		
 		driver.findElement(By.id("ctl00_mainContent_ddl_originStation1_CTXT")).click(); // click on From dropdown
 		driver.findElement(By.xpath("//a[@value='SXR']")).click();

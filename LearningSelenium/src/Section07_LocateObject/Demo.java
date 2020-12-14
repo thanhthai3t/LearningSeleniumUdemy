@@ -7,21 +7,11 @@ public class Demo {
 	public static void main(String[] args) {
 		
 		//set property
-		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver_win32\\chromedriver.exe");
-		
+		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
-		
-		//driver.get("https:/google.com");
-		//System.out.println(driver.getTitle());
-		
-		//System.out.println(driver.getCurrentUrl());
-		
-		//get page source
-		
-		//System.out.println(driver.getPageSource());
+	
 		
 		driver.get("https://facebook.com/");
-		//driver.close();
 		
 		/*driver.findElement(By.id("email")).sendKeys("send keys"); //input email into email field
 		driver.findElement(By.id("pass")).sendKeys("123456");
