@@ -1,13 +1,25 @@
+package Section07_LocateObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Firefox {
+public class Demo {
 	public static void main(String[] args) {
 		
-		System.setProperty("webdriver.gecko.driver", "C:\\Selenium\\geckodriver_v0.27.win64\\geckodriver.exe");
-		WebDriver driver = new FirefoxDriver();
-		 		
+		//set property
+		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver_win32\\chromedriver.exe");
+		
+		WebDriver driver = new ChromeDriver();
+		
+		//driver.get("https:/google.com");
+		//System.out.println(driver.getTitle());
+		
+		//System.out.println(driver.getCurrentUrl());
+		
+		//get page source
+		
+		//System.out.println(driver.getPageSource());
+		
 		driver.get("https://facebook.com/");
 		//driver.close();
 		
@@ -22,5 +34,7 @@ public class Firefox {
 		driver.navigate().refresh();
 		
 		driver.findElement(By.id("did_submit")).click(); // click on search button
+		
+		
 	}
 }

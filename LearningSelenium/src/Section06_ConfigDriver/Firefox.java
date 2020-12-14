@@ -1,25 +1,14 @@
+package Section06_ConfigDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class Demo {
+public class Firefox {
 	public static void main(String[] args) {
 		
-		//set property
-		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver_win32\\chromedriver.exe");
-		
-		//create driver object
-		WebDriver driver = new ChromeDriver();
-		
-		//driver.get("https:/google.com");
-		//System.out.println(driver.getTitle());
-		
-		//System.out.println(driver.getCurrentUrl());
-		
-		//get page source
-		
-		//System.out.println(driver.getPageSource());
-		
+		System.setProperty("webdriver.gecko.driver", "C:\\Selenium\\geckodriver.exe");
+		WebDriver driver = new FirefoxDriver();
+		 		
 		driver.get("https://facebook.com/");
 		//driver.close();
 		
@@ -34,11 +23,5 @@ public class Demo {
 		driver.navigate().refresh();
 		
 		driver.findElement(By.id("did_submit")).click(); // click on search button
-		
-		//driver.findElement(By.xpath("//div[@class='fsl fwb fcb']")).getText();
-			
-		//System.out.println(driver.findElement(By.xpath("//*[@id=\'email_container\']/div[2]/text()")).getText());
-		
-		
 	}
 }
