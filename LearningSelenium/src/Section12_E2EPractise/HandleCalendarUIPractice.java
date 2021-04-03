@@ -25,28 +25,13 @@ public class HandleCalendarUIPractice {
 		
 		Thread.sleep(2000);
 		//select a particular month
-		////div[@class='DayPicker-Months']/div[1]/div[@class='DayPicker-Caption']
-		
-		
-		////div[contains(text(),'April 2021')]
-		
-		
-		/*
-		 * System.out.println(driver.findElement(By.xpath(
-		 * "//div[@class='DayPicker-Months']/div[1]/div[@class='DayPicker-Caption']/div"
-		 * )).getText().contains("February")); driver.findElement(By.cssSelector(
-		 * "span[data-selenium='calendar-next-month-button']")).click();
-		 * System.out.println(driver.findElement(By.xpath(
-		 * "//div[@class='DayPicker-Months']/div[1]/div[@class='DayPicker-Caption']/div"
-		 * )).getText().contains("May"));
-		 */
+
 		while(!driver.findElement(By.xpath("//div[@class='DayPicker-Months']/div[1]/div[@class='DayPicker-Caption']/div")).getText().contains("May"))
 		{
 			driver.findElement(By.cssSelector("span[data-selenium='calendar-next-month-button']")).click();
 			
 		}
 		
-		////div[@class='DayPicker-wrapper']/div/div[1]/div[@class='DayPicker-Body']/div/div/span
 		//select a particular date
 		List<WebElement> dates = driver.findElements(By.xpath("//div[@class='DayPicker-Months']/div[1]/div[@class='DayPicker-Body']/div/div/span"));
 		int count = dates.size();

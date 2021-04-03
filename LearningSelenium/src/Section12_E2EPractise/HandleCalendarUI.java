@@ -18,7 +18,7 @@ public class HandleCalendarUI {
 
 		//select a particular month
 		
-		while(!driver.findElement(By.cssSelector("div[class='datepicker-days'] th[class='datepicker-switch']")).getText().contains("May"));
+		while(!driver.findElement(By.cssSelector("div[class='datepicker-days'] th[class='datepicker-switch']")).getText().contains("May"))
 		{
 			driver.findElement(By.cssSelector("div[class='datepicker-days'] th[class='next']")).click();
 		}
