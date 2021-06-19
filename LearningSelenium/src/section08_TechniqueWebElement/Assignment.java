@@ -23,7 +23,7 @@ public class Assignment {
 
 		// set browser's driver property
 		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\trant\\Downloads\\chromedriver_win32\\chromedriver.exe");
+				"C:\\Selenium\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver(chromeOption);
 
 		// go to site

@@ -13,7 +13,7 @@ public class ScrollWebPage {
 
 	public static void main(String[] args) throws InterruptedException {
 		// Object: Scrolling and verify 
-		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver88.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		
 		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
@@ -60,9 +60,9 @@ public class ScrollWebPage {
 
 		
 		//compare total price and sumPrice
-		Assert.assertEquals(sumPrice, 235);
+		Assert.assertEquals(sumPrice, total);
 		
-		driver.quit();
+		//driver.quit();
 		
 	}
 

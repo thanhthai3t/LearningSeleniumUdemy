@@ -12,7 +12,7 @@ public class HandleDropdown {
 		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		Thread.sleep(10000);
+		Thread.sleep(1000);
 		
 		driver.get("https://www.spicejet.com/");
 		
